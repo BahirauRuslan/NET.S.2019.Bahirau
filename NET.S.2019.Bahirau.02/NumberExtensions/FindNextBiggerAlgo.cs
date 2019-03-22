@@ -2,7 +2,7 @@
 
 namespace NumberExtensions
 {
-    class FindNextBiggerAlgo
+    public class FindNextBiggerAlgo
     {
         public int FindNextBiggerNumber(int number)
         {
