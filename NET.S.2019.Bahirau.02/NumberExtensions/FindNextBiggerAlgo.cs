@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Timers;
 
 namespace NumberExtensions
 {
@@ -21,6 +23,19 @@ namespace NumberExtensions
             }
 
             return -1;
+        }
+
+        public (int, double) FindNextBiggerNumberAndTime(int number)
+        {
+            Timer timer = new Timer();
+            
+            int result;
+            //var watch = Stopwatch.StartNew();
+            timer.Start();
+            result = FindNextBiggerNumber(number);
+            timer.Stop();
+            //watch.Stop();
+            return (result, timer.Interval);//watch.ElapsedMilliseconds);
         }
 
         private int[] ReplaseDigits(int[] digits)

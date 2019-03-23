@@ -35,5 +35,22 @@ namespace NumberExtensions.Tests
         {
             Assert.Throws<ArgumentException>(() => algo.FindNextBiggerNumber(-12));
         }
+
+        [TestCase(12, 21)]
+        [TestCase(513, 531)]
+        [TestCase(2017, 2071)]
+        [TestCase(414, 441)]
+        [TestCase(144, 414)]
+        [TestCase(1234321, 1241233)]
+        [TestCase(1234126, 1234162)]
+        [TestCase(3456432, 3462345)]
+        [TestCase(10, -1)]
+        [TestCase(20, -1)]
+        public void FindNextBiggerNumberAndTime_ValidNumber_TimeMoreThanZero(int number, int expected)
+        {
+            var actual = algo.FindNextBiggerNumberAndTime(number).Item2;
+
+            Assert.Positive(actual);
+        }
     }
 }
