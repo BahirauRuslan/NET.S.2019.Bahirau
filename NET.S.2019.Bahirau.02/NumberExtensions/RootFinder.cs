@@ -2,8 +2,25 @@
 
 namespace NumberExtensions
 {
+    /// <summary>
+    /// The <code>InsertAlgo</code> class.
+    /// Contains the newton method to calculate the root
+    /// </summary>
     public class RootFinder
     {
+        /// <summary>
+        /// Calculate the root
+        /// </summary>
+        /// <param name="a">Real number</param>
+        /// <param name="n">Degree</param>
+        /// <param name="accuracy">Accuracy</param>
+        /// <returns>A root</returns>
+        /// <exception cref="ArgumentException">
+        /// Thrown when <code>n</code> less than 1 or accuracy is negative
+        /// </exception>
+        /// <exception cref="ArithmeticException">
+        /// Thrown when <code>a</code> is negative and <code>n</code> is even
+        /// </exception>
         public double FindNthRoot(double a, int n, double accuracy)
         {
             CheckParameters(a, n, accuracy);

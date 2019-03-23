@@ -3,8 +3,20 @@ using System.Diagnostics;
 
 namespace NumberExtensions
 {
+    /// <summary>
+    /// The <code>FindNextBiggerAlgo</code> class.
+    /// Contains FindNextBiggerNumber methods
+    /// </summary>
     public class FindNextBiggerAlgo
     {
+        /// <summary>
+        /// Finds the nearest bigger number that contains the same set of digits
+        /// </summary>
+        /// <param name="number">Number</param>
+        /// <returns>Nearest bigger integer that contains the same set of digits</returns>
+        /// <exception cref="ArgumentException">
+        /// Thrown when number less than zero (or equal)
+        /// </exception>
         public int FindNextBiggerNumber(int number)
         {
             if (number <= 0)
@@ -24,6 +36,15 @@ namespace NumberExtensions
             return -1;
         }
 
+        /// <summary>
+        /// Finds the nearest bigger number that contains the same set of digits and method execution time
+        /// </summary>
+        /// <param name="number">Number</param>
+        /// <returns>A tuple with nearest bigger integer that contains the same set of digit 
+        /// and method execution time</returns>
+        /// <exception cref="ArgumentException">
+        /// Thrown when number less than zero (or equal)
+        /// </exception>
         public (int, double) FindNextBiggerNumberAndTime(int number)
         {
             int result;
