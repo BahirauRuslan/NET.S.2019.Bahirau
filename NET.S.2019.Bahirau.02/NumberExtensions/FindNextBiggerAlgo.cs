@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Timers;
 
 namespace NumberExtensions
@@ -27,11 +28,13 @@ namespace NumberExtensions
         public (int, double) FindNextBiggerNumberAndTime(int number)
         {
             int result;
-            Timer timer = new Timer();
-            timer.Start();
+            //Timer timer = new Timer();
+            //timer.Start();
+            var wathc = Stopwatch.StartNew();
             result = FindNextBiggerNumber(number);
-            timer.Stop();
-            return (result, timer.Interval);
+            //timer.Stop();
+            wathc.Stop();
+            return (result, wathc.Elapsed.TotalMilliseconds); //(result, timer.Interval);
         }
 
         private int[] ReplaseDigits(int[] digits)
