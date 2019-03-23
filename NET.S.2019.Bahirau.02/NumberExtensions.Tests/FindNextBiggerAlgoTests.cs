@@ -52,5 +52,17 @@ namespace NumberExtensions.Tests
 
             Assert.Positive(actual);
         }
+
+        [Test]
+        public void FindNextBiggerNumberAndTime_Zero_ArgumentException()
+        {
+            Assert.Throws<ArgumentException>(() => algo.FindNextBiggerNumberAndTime(0));
+        }
+
+        [Test]
+        public void FindNextBiggerNumberAndTime_NegativeNumber_ArgumentException()
+        {
+            Assert.Throws<ArgumentException>(() => algo.FindNextBiggerNumberAndTime(-12));
+        }
     }
 }
