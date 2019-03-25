@@ -26,5 +26,5 @@ calculating the nth root (n ∈ N) using the Newton method with a given accuracy
 Add NUnit or MS Unit tests.
 
 
-Ruslan Bahirau
+Ruslan Bahirau  
 ruslan.bahirau.1999@gmail.com
