@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3Tasks", "Day3Tasks\Day3Tasks.csproj", "{18CF80E4-C608-49C8-83EF-A320C4E7B6A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Day3Tasks.Tests", "Day3Tasks.Tests\Day3Tasks.Tests.csproj", "{A51FC389-B3DA-43FC-9410-504C552C5E17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18CF80E4-C608-49C8-83EF-A320C4E7B6A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18CF80E4-C608-49C8-83EF-A320C4E7B6A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18CF80E4-C608-49C8-83EF-A320C4E7B6A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18CF80E4-C608-49C8-83EF-A320C4E7B6A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A51FC389-B3DA-43FC-9410-504C552C5E17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A51FC389-B3DA-43FC-9410-504C552C5E17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A51FC389-B3DA-43FC-9410-504C552C5E17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A51FC389-B3DA-43FC-9410-504C552C5E17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0120DA49-6632-4877-91DC-6CBFD35F4ADA}
+	EndGlobalSection
+EndGlobal
