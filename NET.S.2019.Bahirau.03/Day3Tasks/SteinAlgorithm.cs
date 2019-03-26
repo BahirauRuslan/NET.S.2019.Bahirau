@@ -4,10 +4,10 @@ using System.Diagnostics;
 namespace Day3Tasks
 {
     /// <summary>
-    /// The EuclidAlgo class. 
-    /// Сontains methods for finding GCD
+    /// The SteinAlgorithm static class.
+    /// Implement Stein's alorithm for finding GCD
     /// </summary>
-    public class EuclidAlgo
+    public static class SteinAlgorithm
     {
         /// <summary>
         /// Find the GCD of two or more integers
@@ -20,7 +20,7 @@ namespace Day3Tasks
         /// <exception cref="ArgumentException">
         /// Thrown when count of parameters is less than two or when all parameters is zeroes
         /// </exception>
-        public static int GetGCD(params int[] nums)
+        public static int GetGCDStein(this EuclidAlgo algo, params int[] nums)
         {
             if (nums == null)
             {
@@ -36,7 +36,7 @@ namespace Day3Tasks
 
             for (int i = 0; i < nums.Length; i++)
             {
-                gcd = GetGCD(gcd, nums[i]);
+                gcd = GetGCDStein(gcd, nums[i]);
             }
 
             if (gcd == 0)
@@ -59,11 +59,11 @@ namespace Day3Tasks
         /// <exception cref="ArgumentException">
         /// Thrown when count of nums parameters is less than two or when all nums is zeroes
         /// </exception>
-        public static int GetGCDAndTime(out double time, params int[] nums)
+        public static int GetGCDSteinAndTime(this EuclidAlgo algo, out double time, params int[] nums)
         {
             int gcd;
             var wathc = Stopwatch.StartNew();
-            gcd = GetGCD(nums);
+            gcd = algo.GetGCDStein(nums);
             wathc.Stop();
             time = wathc.Elapsed.TotalMilliseconds;
             return gcd;
@@ -75,10 +75,12 @@ namespace Day3Tasks
         /// <param name="a">First integer</param>
         /// <param name="b">Second integer</param>
         /// <returns>An integer that is the GCD of params a and b</returns>
-        private static int GetGCD(int a, int b)
+        private static int GetGCDStein(int a, int b)
         {
             a = Math.Abs(a);
             b = Math.Abs(b);
+
+            int shift = 0;
 
             if (a == 0)
             {
@@ -90,19 +92,37 @@ namespace Day3Tasks
                 return a;
             }
 
-            while (a != b)
+            while (((a | b) & 1) == 0)
             {
-                if (a > b)
-                {
-                    a -= b;
-                }
-                else
-                {
-                    b -= a;
-                }
+                shift++;
+                a >>= 1;
+                b >>= 1;
             }
 
-            return a;
+            while ((a & 1) == 0)
+            {
+                a >>= 1;
+            }
+
+            do
+            {
+                while ((b & 1) == 0)
+                {
+                    b >>= 1;
+                }
+
+                if (a > b)
+                {
+                    int t = b;
+                    b = a;
+                    a = t;
+                }
+
+                b -= a;
+            }
+            while (b != 0);
+
+            return a << shift;
         }
     }
 }
