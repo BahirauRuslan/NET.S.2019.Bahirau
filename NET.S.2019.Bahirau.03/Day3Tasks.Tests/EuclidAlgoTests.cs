@@ -14,7 +14,7 @@ namespace Day3Tasks.Tests
         [TestCase(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)]
         public void GetGCD_ValidNumbers_GCD(int expected, params int[] nums)
         {
-            int actual = EuclidAlgo.GetGCD(nums);
+            int actual = EuclidAlgorithm.GetGCD(nums);
 
             Assert.AreEqual(expected, actual);
         }
@@ -22,25 +22,25 @@ namespace Day3Tasks.Tests
         [Test]
         public void GetGCD_Zeroes_ArgumentException()
         {
-            Assert.Throws<ArgumentException>(() => EuclidAlgo.GetGCD(0, 0, 0, 0, 0, 0));
+            Assert.Throws<ArgumentException>(() => EuclidAlgorithm.GetGCD(0, 0, 0, 0, 0, 0));
         }
 
         [Test]
         public void GetGCD_OneParameter_ArgumentException()
         {
-            Assert.Throws<ArgumentException>(() => EuclidAlgo.GetGCD(28));
+            Assert.Throws<ArgumentException>(() => EuclidAlgorithm.GetGCD(28));
         }
 
         [Test]
         public void GetGCD_Nothing_ArgumentException()
         {
-            Assert.Throws<ArgumentException>(() => EuclidAlgo.GetGCD());
+            Assert.Throws<ArgumentException>(() => EuclidAlgorithm.GetGCD());
         }
 
         [Test]
         public void GetGCD_Null_ArgumentNullException()
         {
-            Assert.Throws<ArgumentNullException>(() => EuclidAlgo.GetGCD(null));
+            Assert.Throws<ArgumentNullException>(() => EuclidAlgorithm.GetGCD(null));
         }
 
         #endregion
@@ -54,7 +54,7 @@ namespace Day3Tasks.Tests
         [TestCase(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)]
         public void GetGCDAndTime_ValidNumbers_PositiveTime(int expected, params int[] nums)
         {
-            EuclidAlgo.GetGCDAndTime(out double time, nums);
+            EuclidAlgorithm.GetGCDAndTime(out double time, nums);
 
             Assert.Positive(time);
         }
@@ -62,25 +62,25 @@ namespace Day3Tasks.Tests
         [Test]
         public void GetGCDAndTime_Zeroes_ArgumentException()
         {
-            Assert.Throws<ArgumentException>(() => EuclidAlgo.GetGCDAndTime(out double time, 0, 0, 0, 0, 0, 0));
+            Assert.Throws<ArgumentException>(() => EuclidAlgorithm.GetGCDAndTime(out double time, 0, 0, 0, 0, 0, 0));
         }
 
         [Test]
         public void GetGCDAndTime_OneParameter_ArgumentException()
         {
-            Assert.Throws<ArgumentException>(() => EuclidAlgo.GetGCDAndTime(out double time, 28));
+            Assert.Throws<ArgumentException>(() => EuclidAlgorithm.GetGCDAndTime(out double time, 28));
         }
 
         [Test]
         public void GetGCDAndTime_Nothing_ArgumentException()
         {
-            Assert.Throws<ArgumentException>(() => EuclidAlgo.GetGCDAndTime(out double time));
+            Assert.Throws<ArgumentException>(() => EuclidAlgorithm.GetGCDAndTime(out double time));
         }
 
         [Test]
         public void GetGCDAndTime_Null_ArgumentNullException()
         {
-            Assert.Throws<ArgumentNullException>(() => EuclidAlgo.GetGCDAndTime(out double time, null));
+            Assert.Throws<ArgumentNullException>(() => EuclidAlgorithm.GetGCDAndTime(out double time, null));
         }
 
         #endregion

@@ -4,39 +4,39 @@ using System.Diagnostics;
 namespace Day3Tasks
 {
     /// <summary>
-    /// The EuclidAlgo class. 
-    /// Сontains methods for finding GCD
+    /// The EuclidAlgorithm class. 
+    /// Has methods for finding GCD
     /// </summary>
-    public class EuclidAlgo
+    public class EuclidAlgorithm
     {
         /// <summary>
         /// Find the GCD of two or more integers
         /// </summary>
-        /// <param name="nums">Integers</param>
-        /// <returns>An integer that is the GCD of all nums</returns>
+        /// <param name="numbers">Integers</param>
+        /// <returns>An integer that is the GCD of all numbers</returns>
         /// <exception cref="ArgumentNullException">
-        /// Thrown when parameter nums is null
+        /// Thrown when parameter numbers is null
         /// </exception>
         /// <exception cref="ArgumentException">
         /// Thrown when count of parameters is less than two or when all parameters is zeroes
         /// </exception>
-        public static int GetGCD(params int[] nums)
+        public static int GetGCD(params int[] numbers)
         {
-            if (nums == null)
+            if (numbers == null)
             {
                 throw new ArgumentNullException();
             }
 
-            if (nums.Length < 2)
+            if (numbers.Length < 2)
             {
                 throw new ArgumentException("Count of arguments must be two or more");
             }
 
             int gcd = 0;
 
-            for (int i = 0; i < nums.Length; i++)
+            for (int i = 0; i < numbers.Length; i++)
             {
-                gcd = GetGCD(gcd, nums[i]);
+                gcd = GetGCD(gcd, numbers[i]);
             }
 
             if (gcd == 0)
@@ -51,19 +51,19 @@ namespace Day3Tasks
         /// Find the GCD of two or more integers and method execution time
         /// </summary>
         /// <param name="time">Out parameter time of method execution</param>
-        /// <param name="nums">Integers</param>
-        /// <returns>An integer that is the GCD of all nums</returns>
+        /// <param name="numbers">Integers</param>
+        /// <returns>An integer that is the GCD of all numbers</returns>
         /// <exception cref="ArgumentNullException">
-        /// Thrown when parameter nums is null
+        /// Thrown when parameter numbers is null
         /// </exception>
         /// <exception cref="ArgumentException">
-        /// Thrown when count of nums parameters is less than two or when all nums is zeroes
+        /// Thrown when count of numbers parameters is less than two or when all numbers is zeroes
         /// </exception>
-        public static int GetGCDAndTime(out double time, params int[] nums)
+        public static int GetGCDAndTime(out double time, params int[] numbers)
         {
             int gcd;
             var wathc = Stopwatch.StartNew();
-            gcd = GetGCD(nums);
+            gcd = GetGCD(numbers);
             wathc.Stop();
             time = wathc.Elapsed.TotalMilliseconds;
             return gcd;
@@ -74,7 +74,7 @@ namespace Day3Tasks
         /// </summary>
         /// <param name="a">First integer</param>
         /// <param name="b">Second integer</param>
-        /// <returns>An integer that is the GCD of params a and b</returns>
+        /// <returns>An integer that is the GCD of parameters a and b</returns>
         private static int GetGCD(int a, int b)
         {
             a = Math.Abs(a);

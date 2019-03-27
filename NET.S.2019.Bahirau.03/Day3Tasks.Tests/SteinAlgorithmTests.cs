@@ -5,7 +5,7 @@ namespace Day3Tasks.Tests
 {
     public class SteinAlgorithmTests
     {
-        private EuclidAlgo algo = new EuclidAlgo();
+        private EuclidAlgorithm algo = new EuclidAlgorithm();
 
         #region GetGCDSteinTests
 
