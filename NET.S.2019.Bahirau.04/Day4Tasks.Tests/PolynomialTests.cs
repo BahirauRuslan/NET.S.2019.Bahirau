@@ -3,6 +3,7 @@ using NUnit.Framework;
 
 namespace Day4Tasks.Tests
 {
+    [TestFixture]
     public class PolynomialTests
     {
         #region Test operator +
