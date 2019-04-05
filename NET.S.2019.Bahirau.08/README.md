@@ -30,7 +30,7 @@ To work with the account to realize the following features:
 	- make a deposit to the account;
 	- execute lists from the account;
 	- create a new account;
-	- close an account.
+	- close an account.  
 Information about the accounts is stored in a binary file.
 The work of the classes is demonstrated by the example of a console application.
 The following expansion / change features
