@@ -6,7 +6,22 @@ namespace BooksManager
     {
         public int Compare(Book x, Book y)
         {
-            return x.Author.CompareTo(y.Author);
+            if (x == null && y == null)
+            {
+                return 0;
+            }
+            else if (x == null)
+            {
+                return -1;
+            }
+            else if (y == null)
+            {
+                return 1;
+            }
+            else
+            {
+                return string.Compare(x.Author, y.Author);
+            }
         }
     }
 }
