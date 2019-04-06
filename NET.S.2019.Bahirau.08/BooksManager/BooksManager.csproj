@@ -45,9 +45,11 @@
   <ItemGroup>
     <Compile Include="AuthorComparer.cs" />
     <Compile Include="Book.cs" />
+    <Compile Include="BookListFileService.cs" />
     <Compile Include="ISBNComparer.cs" />
     <Compile Include="BookListService.cs" />
     <Compile Include="BookTag.cs" />
+    <Compile Include="PagesCountComparer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublisherComparer.cs" />
