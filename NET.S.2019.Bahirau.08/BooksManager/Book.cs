@@ -3,16 +3,46 @@ using System.Collections.Generic;
 
 namespace BooksManager
 {
+    /// <summary>
+    /// The Book class.
+    /// Describes a book
+    /// </summary>
     [Serializable]
     public class Book : IEquatable<Book>
     {
+        /// <summary>
+        /// ISBN
+        /// </summary>
         private string _isbn = string.Empty;
+
+        /// <summary>
+        /// Author name
+        /// </summary>
         private string _author = string.Empty;
+
+        /// <summary>
+        /// Book title
+        /// </summary>
         private string _title = string.Empty;
+
+        /// <summary>
+        /// Publisher
+        /// </summary>
         private string _publisher = string.Empty;
+
+        /// <summary>
+        /// Publishing year
+        /// </summary>
         private int _publishingYear;
+
+        /// <summary>
+        /// Count of pages
+        /// </summary>
         private int _pagesCount;
 
+        /// <summary>
+        /// ISBN of book
+        /// </summary>
         public string ISBN
         {
             get
@@ -26,6 +56,9 @@ namespace BooksManager
             }
         }
 
+        /// <summary>
+        /// Book author
+        /// </summary>
         public string Author
         {
             get
@@ -39,6 +72,9 @@ namespace BooksManager
             }
         }
 
+        /// <summary>
+        /// Book title
+        /// </summary>
         public string Title
         {
             get
@@ -52,6 +88,9 @@ namespace BooksManager
             }
         }
 
+        /// <summary>
+        /// Book publisher
+        /// </summary>
         public string Publisher
         {
             get
@@ -65,6 +104,9 @@ namespace BooksManager
             }
         }
 
+        /// <summary>
+        /// Publication year
+        /// </summary>
         public int PublishingYear
         {
             get
@@ -83,6 +125,9 @@ namespace BooksManager
             }
         }
 
+        /// <summary>
+        /// Count of pages
+        /// </summary>
         public int PagesCount
         {
             get
