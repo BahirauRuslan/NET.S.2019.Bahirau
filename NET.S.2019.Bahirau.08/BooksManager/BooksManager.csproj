@@ -50,6 +50,7 @@
     <Compile Include="BookTag.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublisherComparer.cs" />
     <Compile Include="TitleComparer.cs" />
   </ItemGroup>
   <ItemGroup>
