@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace BankAccount
 {
@@ -19,12 +16,25 @@ namespace BankAccount
 
         public override void LoadFromStorage()
         {
-            throw new NotImplementedException();
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (var stream = new FileStream(this.FilePath, FileMode.OpenOrCreate))
+            {
+                Account[] accounts = (Account[])formatter.Deserialize(stream);
+                
+                foreach (var account in accounts)
+                {
+                    this.AddAccount(account);
+                }
+            }
         }
 
         public override void SaveToStorage()
         {
-            throw new NotImplementedException();
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (var stream = new FileStream(this.FilePath, FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(stream, this.ToAccountArray());
+            }
         }
     }
 }
