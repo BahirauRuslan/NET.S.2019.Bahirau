@@ -72,5 +72,10 @@ namespace BankAccount
         /// <param name="balanceDifference">Balance difference</param>
         /// <param name="balance">Account balance</param>
         public abstract void ChangeBonus(decimal balanceDifference, decimal balance);
+
+        public override string ToString()
+        {
+            return string.Format("Type of account: {0}\nBonus: {1}", TypeName, _bonus);
+        }
     }
 }
