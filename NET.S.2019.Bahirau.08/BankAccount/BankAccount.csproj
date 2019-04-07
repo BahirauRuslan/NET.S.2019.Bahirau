@@ -44,9 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="AccountBinaryFileService.cs" />
+    <Compile Include="AccountService.cs" />
     <Compile Include="AccountType.cs" />
     <Compile Include="BaseAccountType.cs" />
+    <Compile Include="GoldAccountType.cs" />
     <Compile Include="IBonusCalculator.cs" />
+    <Compile Include="PatinumAccountType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
