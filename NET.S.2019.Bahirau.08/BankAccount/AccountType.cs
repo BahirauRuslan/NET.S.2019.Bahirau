@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace BankAccount
 {
@@ -6,7 +7,7 @@ namespace BankAccount
     /// The AccountType class
     /// </summary>
     [Serializable]
-    public abstract class AccountType
+    public abstract class AccountType : IEquatable<AccountType>
     {
         /// <summary>
         /// Bonus points
@@ -73,6 +74,28 @@ namespace BankAccount
         /// <param name="balanceDifference">Balance difference</param>
         /// <param name="balance">Account balance</param>
         public abstract void ChangeBonus(decimal balanceDifference, decimal balance);
+
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as AccountType);
+        }
+
+        public bool Equals(AccountType other)
+        {
+            return other != null &&
+                   _bonus == other._bonus &&
+                   Bonus == other.Bonus &&
+                   TypeName == other.TypeName;
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = -1109883133;
+            hashCode = (hashCode * -1521134295) + _bonus.GetHashCode();
+            hashCode = (hashCode * -1521134295) + Bonus.GetHashCode();
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(TypeName);
+            return hashCode;
+        }
 
         public override string ToString()
         {

@@ -8,7 +8,7 @@ namespace BankAccount
     /// Describes a bank account
     /// </summary>
     [Serializable]
-    public class Account : IEquatable<Account>, IComparable<Account>
+    public class Account : IComparable<Account>, IEquatable<Account>
     {
         /// <summary>
         /// Balance identification number
@@ -127,32 +127,6 @@ namespace BankAccount
             Balance += amount;
         }
 
-        public override bool Equals(object obj)
-        {
-            return this.Equals(obj as Account);
-        }
-
-        public bool Equals(Account other)
-        {
-            return other != null &&
-                   _id == other._id &&
-                   _firstName == other._firstName &&
-                   _lastName == other._lastName &&
-                   EqualityComparer<AccountType>.Default.Equals(_accountType, other._accountType) &&
-                   Balance == other.Balance;
-        }
-
-        public override int GetHashCode()
-        {
-            var hashCode = 1910998087;
-            hashCode = (hashCode * -1521134295) + _id.GetHashCode();
-            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(_firstName);
-            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(_lastName);
-            hashCode = (hashCode * -1521134295) + EqualityComparer<AccountType>.Default.GetHashCode(_accountType);
-            hashCode = (hashCode * -1521134295) + Balance.GetHashCode();
-            return hashCode;
-        }
-
         public int CompareTo(Account other)
         {
             if (other == null)
@@ -173,6 +147,34 @@ namespace BankAccount
                 _lastName, 
                 Balance, 
                 _accountType);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return this.Equals(obj as Account);
+        }
+
+        public bool Equals(Account other)
+        {
+            return other != null &&
+                   _id == other._id &&
+                   _firstName == other._firstName &&
+                   _lastName == other._lastName &&
+                   EqualityComparer<AccountType>.Default.Equals(_accountType, other._accountType) &&
+                   Balance == other.Balance &&
+                   IsEnabled == other.IsEnabled;
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = -1633517011;
+            hashCode = (hashCode * -1521134295) + _id.GetHashCode();
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(_firstName);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<string>.Default.GetHashCode(_lastName);
+            hashCode = (hashCode * -1521134295) + EqualityComparer<AccountType>.Default.GetHashCode(_accountType);
+            hashCode = (hashCode * -1521134295) + Balance.GetHashCode();
+            hashCode = (hashCode * -1521134295) + IsEnabled.GetHashCode();
+            return hashCode;
         }
     }
 }
