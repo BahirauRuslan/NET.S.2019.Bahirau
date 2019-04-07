@@ -77,7 +77,7 @@ namespace BankAccount
 
         public override bool Equals(object obj)
         {
-            return Equals(obj as AccountType);
+            return this.Equals(obj as AccountType);
         }
 
         public bool Equals(AccountType other)
