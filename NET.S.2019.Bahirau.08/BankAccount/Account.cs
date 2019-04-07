@@ -27,7 +27,7 @@ namespace BankAccount
         /// <summary>
         /// Type of account
         /// </summary>
-        private AccountType _accountType;
+        private AccountType _accountType = new BaseAccountType();
 
         /// <summary>
         /// Account balance
