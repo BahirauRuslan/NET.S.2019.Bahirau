@@ -8,16 +8,6 @@ namespace BankAccount
     public abstract class AccountType
     {
         /// <summary>
-        /// Cost of balance difference
-        /// </summary>
-        protected int DifferenceCost;
-
-        /// <summary>
-        /// Cost of balance
-        /// </summary>
-        protected int BalanceCost;
-
-        /// <summary>
         /// Bonus points
         /// </summary>
         private decimal _bonus = 0m;
@@ -42,6 +32,16 @@ namespace BankAccount
         /// Name of account type
         /// </summary>
         public abstract string TypeName { get; }
+
+        /// <summary>
+        /// Cost of balance difference
+        /// </summary>
+        protected int DifferenceCost { get; set; }
+
+        /// <summary>
+        /// Cost of balance
+        /// </summary>
+        protected int BalanceCost { get; set; }
 
         /// <summary>
         /// Change bonus
