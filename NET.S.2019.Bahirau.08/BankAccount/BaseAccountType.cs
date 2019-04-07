@@ -2,6 +2,7 @@
 
 namespace BankAccount
 {
+    [Serializable]
     public class BaseAccountType : AccountType
     {
         public BaseAccountType()

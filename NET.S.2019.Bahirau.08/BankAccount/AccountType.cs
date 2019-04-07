@@ -5,6 +5,7 @@ namespace BankAccount
     /// <summary>
     /// The AccountType class
     /// </summary>
+    [Serializable]
     public abstract class AccountType
     {
         /// <summary>

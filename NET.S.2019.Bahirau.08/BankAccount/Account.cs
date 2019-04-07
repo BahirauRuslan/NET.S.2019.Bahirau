@@ -7,6 +7,7 @@ namespace BankAccount
     /// The Account class.
     /// Describes a bank account
     /// </summary>
+    [Serializable]
     public class Account : IEquatable<Account>, IComparable<Account>
     {
         /// <summary>

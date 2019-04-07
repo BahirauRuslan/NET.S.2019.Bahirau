@@ -2,6 +2,7 @@
 
 namespace BankAccount
 {
+    [Serializable]
     public class PatinumAccountType : AccountType
     {
         public PatinumAccountType()
