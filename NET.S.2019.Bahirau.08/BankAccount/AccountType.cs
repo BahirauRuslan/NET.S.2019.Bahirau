@@ -32,7 +32,7 @@ namespace BankAccount
                 return _bonus;
             }
 
-            private set
+            protected set
             {
                 _bonus = (value > 0) ? value : 0;
             }
