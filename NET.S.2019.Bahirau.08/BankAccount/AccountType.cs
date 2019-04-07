@@ -10,12 +10,12 @@ namespace BankAccount
         /// <summary>
         /// Cost of balance difference
         /// </summary>
-        protected readonly int DifferenceCost;
+        protected int DifferenceCost;
 
         /// <summary>
         /// Cost of balance
         /// </summary>
-        protected readonly int BalanceCost;
+        protected int BalanceCost;
 
         /// <summary>
         /// Bonus points
