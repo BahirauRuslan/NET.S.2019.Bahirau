@@ -35,6 +35,11 @@ namespace BankAccount
         public decimal Balance { get; private set; }
 
         /// <summary>
+        /// Account enabled
+        /// </summary>
+        public bool IsEnabled { get; set; } = true;
+
+        /// <summary>
         /// Balance identification number
         /// </summary>
         public long Id
@@ -160,7 +165,8 @@ namespace BankAccount
         public override string ToString()
         {
             return string.Format(
-                "Account:\nId: {0}\nFirst name: {1}\nLast name: {2}\nBalance: {3}\n{4}",
+                "Account:\nStatus enabled: {0}\nId: {1}\nFirst name: {2}\nLast name: {3}\nBalance: {4}\n{5}",
+                IsEnabled,
                 _id, 
                 _firstName, 
                 _lastName, 
