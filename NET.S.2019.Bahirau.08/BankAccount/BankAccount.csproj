@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="AccountType.cs" />
+    <Compile Include="BaseAccountType.cs" />
     <Compile Include="IBonusCalculator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
