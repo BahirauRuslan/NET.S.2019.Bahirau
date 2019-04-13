@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BubbleAlgorithmComparatorToDelegate.cs" />
+    <Compile Include="IntArrayComparers\MaxItemComparer.cs" />
+    <Compile Include="IntArrayComparers\MinItemComparer.cs" />
+    <Compile Include="IntArrayComparers\SumComparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

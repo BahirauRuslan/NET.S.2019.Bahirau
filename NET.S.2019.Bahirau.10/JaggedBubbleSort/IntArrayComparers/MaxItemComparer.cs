@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace JaggedBubbleSort.IntArrayComparers
 {
-    public class MinItemComparer : IComparer<int[]>
+    public class MaxItemComparer : IComparer<int[]>
     {
         public int Compare(int[] x, int[] y)
         {
@@ -21,7 +21,7 @@ namespace JaggedBubbleSort.IntArrayComparers
             }
             else
             {
-                return x.Min().CompareTo(y.Min());
+                return x.Max().CompareTo(y.Max());
             }
         }
     }
