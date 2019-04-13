@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using JaggedBubbleSort.IntArrayComparers;
 
 namespace JaggedBubbleSort
 {
@@ -21,8 +18,8 @@ namespace JaggedBubbleSort
         /// </exception>
         public static void BubbleSortBySum(int[][] jaggedArr, bool desc = false)
         {
-            /*int parameter(int[] arr) => (from num in arr select num).Sum();
-            BubbleSort(jaggedArr, parameter, desc);*/
+            var comparer = new SumComparer();
+            BubbleSort(jaggedArr, comparer.Compare, desc);
         }
 
         /// <summary>
@@ -38,8 +35,8 @@ namespace JaggedBubbleSort
         /// </exception>
         public static void BubbleSortByMax(int[][] jaggedArr, bool desc = false)
         {
-            /*int parameter(int[] arr) => (from num in arr orderby num select num).Last();
-            BubbleSort(jaggedArr, parameter, desc);*/
+            var comparer = new MaxItemComparer();
+            BubbleSort(jaggedArr, comparer.Compare, desc);
         }
 
         /// <summary>
@@ -55,15 +52,15 @@ namespace JaggedBubbleSort
         /// </exception>
         public static void BubbleSortByMin(int[][] jaggedArr, bool desc = false)
         {
-            /*int parameter(int[] arr) => (from num in arr orderby num select num).First();
-            BubbleSort(jaggedArr, parameter, desc);*/
+            var comparer = new MinItemComparer();
+            BubbleSort(jaggedArr, comparer.Compare, desc);
         }
 
         /// <summary>
         /// Sort jagged array by property
         /// </summary>
         /// <param name="jaggedArr">Array of arrays of integers</param>
-        /// <param name="comparer">Comparer</param>
+        /// <param name="compare">Compare delegate</param>
         /// <param name="desc">Descending order</param>
         /// <exception cref="ArgumentNullException">
         /// Thrown when jagged array or item of jagged array or parameter is null
@@ -71,9 +68,9 @@ namespace JaggedBubbleSort
         /// <exception cref="ArgumentException">
         /// Thrown when jagged array or item of jagged array is empty
         /// </exception>
-        public static void BubbleSort(int[][] jaggedArr, IComparer<int[]> comparer, bool desc = false)
+        public static void BubbleSort(int[][] jaggedArr, Func<int[], int[], int> compare, bool desc = false)
         {
-            CheckJaggerArray(jaggedArr, comparer);
+            CheckJaggerArray(jaggedArr, compare);
 
             var descCoefficient = desc ? -1 : 1;
 
@@ -81,7 +78,7 @@ namespace JaggedBubbleSort
             {
                 for (var j = 0; j < jaggedArr.Length - i - 1; j++)
                 {
-                    if (descCoefficient * comparer.Compare(jaggedArr[j], jaggedArr[j + 1]) > 0)
+                    if (descCoefficient * compare(jaggedArr[j], jaggedArr[j + 1]) > 0)
                     {
                         Swap(ref jaggedArr[j], ref jaggedArr[j + 1]);
                     }
@@ -105,16 +102,16 @@ namespace JaggedBubbleSort
         /// Check parameters for bubble sorting
         /// </summary>
         /// <param name="jaggerArr">Array of arrays of integers</param>
-        /// <param name="comparer">Comparer</param>
+        /// <param name="compare">Compare delegate</param>
         /// <exception cref="ArgumentNullException">
         /// Thrown when jagged array or item of jagged array or parameter is null
         /// </exception>
         /// <exception cref="ArgumentException">
         /// Thrown when jagged array or item of jagged array is empty
         /// </exception>
-        private static void CheckJaggerArray(int[][] jaggerArr, IComparer<int[]> comparer)
+        private static void CheckJaggerArray(int[][] jaggerArr, Func<int[], int[], int> compare)
         {
-            if (jaggerArr == null || comparer == null)
+            if (jaggerArr == null || compare == null)
             {
                 throw new ArgumentNullException("Expected not null but was null");
             }
