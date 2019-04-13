@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCDAlgorithm", "GCDAlgorith
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCDAlgorithm.Tests", "GCDAlgorithm.Tests\GCDAlgorithm.Tests.csproj", "{1C57F782-48AC-45EA-A9BE-958869D89CB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JaggedBubbleSort", "JaggedBubbleSort\JaggedBubbleSort.csproj", "{FD8B005B-8DE1-4019-8E2E-4FA2D94AF97A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1C57F782-48AC-45EA-A9BE-958869D89CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C57F782-48AC-45EA-A9BE-958869D89CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C57F782-48AC-45EA-A9BE-958869D89CB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD8B005B-8DE1-4019-8E2E-4FA2D94AF97A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD8B005B-8DE1-4019-8E2E-4FA2D94AF97A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD8B005B-8DE1-4019-8E2E-4FA2D94AF97A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD8B005B-8DE1-4019-8E2E-4FA2D94AF97A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
