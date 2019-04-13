@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BubbleAlgorithmComparatorToDelegate.cs" />
     <Compile Include="BubbleAlgorithmDelegateToComparator.cs" />
+    <Compile Include="IntArrayComparers\FirstItemComparer.cs" />
     <Compile Include="IntArrayComparers\MaxItemComparer.cs" />
     <Compile Include="IntArrayComparers\MinItemComparer.cs" />
     <Compile Include="IntArrayComparers\SumComparer.cs" />
