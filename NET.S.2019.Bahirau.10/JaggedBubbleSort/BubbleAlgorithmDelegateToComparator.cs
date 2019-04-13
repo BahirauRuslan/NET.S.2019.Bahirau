@@ -1,5 +1,6 @@
 ﻿using System;
-using JaggedBubbleSort.IntArrayComparers;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace JaggedBubbleSort
 {
@@ -7,7 +8,7 @@ namespace JaggedBubbleSort
     /// The BubbleAlgorithm class.
     /// Has bubble sorting methods for jagged arrays
     /// </summary>
-    public class BubbleAlgorithmComparatorToDelegate
+    public class BubbleAlgorithmDelegateToComparator
     {
         /// <summary>
         /// Sort jagged array by sum of values
@@ -22,8 +23,8 @@ namespace JaggedBubbleSort
         /// </exception>
         public static void BubbleSortBySum(int[][] jaggedArr, bool desc = false)
         {
-            var comparer = new SumComparer();
-            BubbleSort(jaggedArr, comparer.Compare, desc);
+            Func<int[], int[], int> compare = delegate(int[] a, int[] b) { return a.Sum().CompareTo(b.Sum()); };
+            BubbleSort(jaggedArr, (IComparer<int[]>)compare.Target, desc);
         }
 
         /// <summary>
@@ -39,8 +40,8 @@ namespace JaggedBubbleSort
         /// </exception>
         public static void BubbleSortByMax(int[][] jaggedArr, bool desc = false)
         {
-            var comparer = new MaxItemComparer();
-            BubbleSort(jaggedArr, comparer.Compare, desc);
+            Func<int[], int[], int> compare = delegate(int[] a, int[] b) { return a.Max().CompareTo(b.Max()); };
+            BubbleSort(jaggedArr, (IComparer<int[]>)compare.Target, desc);
         }
 
         /// <summary>
@@ -56,15 +57,15 @@ namespace JaggedBubbleSort
         /// </exception>
         public static void BubbleSortByMin(int[][] jaggedArr, bool desc = false)
         {
-            var comparer = new MinItemComparer();
-            BubbleSort(jaggedArr, comparer.Compare, desc);
+            Func<int[], int[], int> compare = delegate(int[] a, int[] b) { return a.Min().CompareTo(b.Min()); };
+            BubbleSort(jaggedArr, (IComparer<int[]>)compare.Target, desc);
         }
 
         /// <summary>
         /// Sort jagged array by property
         /// </summary>
         /// <param name="jaggedArr">Array of arrays of integers</param>
-        /// <param name="compare">Compare delegate</param>
+        /// <param name="comparer">Comparer</param>
         /// <param name="desc">Descending order</param>
         /// <exception cref="ArgumentNullException">
         /// Thrown when jagged array or item of jagged array or parameter is null
@@ -72,9 +73,9 @@ namespace JaggedBubbleSort
         /// <exception cref="ArgumentException">
         /// Thrown when jagged array or item of jagged array is empty
         /// </exception>
-        public static void BubbleSort(int[][] jaggedArr, Func<int[], int[], int> compare, bool desc = false)
+        public static void BubbleSort(int[][] jaggedArr, IComparer<int[]> comparer, bool desc = false)
         {
-            CheckJaggerArray(jaggedArr, compare);
+            CheckJaggerArray(jaggedArr, comparer);
 
             var descCoefficient = desc ? -1 : 1;
 
@@ -82,7 +83,7 @@ namespace JaggedBubbleSort
             {
                 for (var j = 0; j < jaggedArr.Length - i - 1; j++)
                 {
-                    if (descCoefficient * compare(jaggedArr[j], jaggedArr[j + 1]) > 0)
+                    if (descCoefficient * comparer.Compare(jaggedArr[j], jaggedArr[j + 1]) > 0)
                     {
                         Swap(ref jaggedArr[j], ref jaggedArr[j + 1]);
                     }
@@ -106,16 +107,16 @@ namespace JaggedBubbleSort
         /// Check parameters for bubble sorting
         /// </summary>
         /// <param name="jaggerArr">Array of arrays of integers</param>
-        /// <param name="compare">Compare delegate</param>
+        /// <param name="comparer">Comparer</param>
         /// <exception cref="ArgumentNullException">
         /// Thrown when jagged array or item of jagged array or parameter is null
         /// </exception>
         /// <exception cref="ArgumentException">
         /// Thrown when jagged array or item of jagged array is empty
         /// </exception>
-        private static void CheckJaggerArray(int[][] jaggerArr, Func<int[], int[], int> compare)
+        private static void CheckJaggerArray(int[][] jaggerArr, IComparer<int[]> comparer)
         {
-            if (jaggerArr == null || compare == null)
+            if (jaggerArr == null || comparer == null)
             {
                 throw new ArgumentNullException("Expected not null but was null");
             }
