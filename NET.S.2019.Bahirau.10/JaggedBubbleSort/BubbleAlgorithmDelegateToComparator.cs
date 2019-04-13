@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using JaggedBubbleSort.IntArrayComparers;
 
 namespace JaggedBubbleSort
 {
@@ -23,7 +24,7 @@ namespace JaggedBubbleSort
         /// </exception>
         public static void BubbleSortBySum(int[][] jaggedArr, bool desc = false)
         {
-            Func<int[], int[], int> compare = delegate(int[] a, int[] b) { return a.Sum().CompareTo(b.Sum()); };
+            Func<int[], int[], int> compare = new SumComparer().Compare;
             BubbleSort(jaggedArr, (IComparer<int[]>)compare.Target, desc);
         }
 
@@ -40,7 +41,7 @@ namespace JaggedBubbleSort
         /// </exception>
         public static void BubbleSortByMax(int[][] jaggedArr, bool desc = false)
         {
-            Func<int[], int[], int> compare = delegate(int[] a, int[] b) { return a.Max().CompareTo(b.Max()); };
+            Func<int[], int[], int> compare = new MaxItemComparer().Compare;
             BubbleSort(jaggedArr, (IComparer<int[]>)compare.Target, desc);
         }
 
@@ -57,7 +58,7 @@ namespace JaggedBubbleSort
         /// </exception>
         public static void BubbleSortByMin(int[][] jaggedArr, bool desc = false)
         {
-            Func<int[], int[], int> compare = delegate(int[] a, int[] b) { return a.Min().CompareTo(b.Min()); };
+            Func<int[], int[], int> compare = new MinItemComparer().Compare;
             BubbleSort(jaggedArr, (IComparer<int[]>)compare.Target, desc);
         }
 
