@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 
-namespace Books
+namespace BooksManager.Comparers
 {
     /// <summary>
-    /// Book count of pages comparer
+    /// Book publisher comparer
     /// </summary>
-    public class PagesCountComparer : IComparer<Book>
+    public class PublisherComparer : IComparer<Book>
     {
         /// <summary>
-        /// Compare two books by count of pages
+        /// Compare two books by publisher
         /// </summary>
         /// <param name="x">First book</param>
         /// <param name="y">Second book</param>
@@ -29,7 +29,7 @@ namespace Books
             }
             else
             {
-                return x.PagesCount.CompareTo(y.PagesCount);
+                return string.Compare(x.Publisher, y.Publisher);
             }
         }
     }

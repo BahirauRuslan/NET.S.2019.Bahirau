@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using BooksManager.Comparers;
 
-namespace Books
+namespace BooksManager.Services
 {
     /// <summary>
     /// The BookListService abstract class.

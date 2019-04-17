@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Books
+namespace BooksManager.Extensions
 {
     /// <summary>
     /// The BookExtension static class that 

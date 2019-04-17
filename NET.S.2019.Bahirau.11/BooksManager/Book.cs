@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace Books
+namespace BooksManager
 {
     /// <summary>
     /// The Book class.

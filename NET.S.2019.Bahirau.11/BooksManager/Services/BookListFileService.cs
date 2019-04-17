@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Books
+namespace BooksManager.Services
 {
     /// <summary>
     /// The BookListFileService class.

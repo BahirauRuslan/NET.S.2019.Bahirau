@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 
-namespace Books
+namespace BooksManager.Comparers
 {
     /// <summary>
-    /// Book publishing year comparer
+    /// Book author comparer
     /// </summary>
-    public class PublishingYearComparer : IComparer<Book>
+    public class AuthorComparer : IComparer<Book>
     {
         /// <summary>
-        /// Compare two books by publishing year
+        /// Compare two books by author name
         /// </summary>
         /// <param name="x">First book</param>
         /// <param name="y">Second book</param>
@@ -29,7 +29,7 @@ namespace Books
             }
             else
             {
-                return x.PublishingYear.CompareTo(y.PublishingYear);
+                return string.Compare(x.Author, y.Author);
             }
         }
     }

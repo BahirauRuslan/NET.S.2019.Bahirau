@@ -1,4 +1,4 @@
-﻿namespace Books
+﻿namespace BooksManager
 {
     /// <summary>
     /// Enum of book tags
