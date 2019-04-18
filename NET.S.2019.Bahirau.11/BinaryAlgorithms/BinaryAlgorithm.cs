@@ -1,30 +1,59 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BinaryAlgorithms
 {
+    /// <summary>
+    /// Binary search class
+    /// </summary>
     public class BinaryAlgorithm
     {
+        /// <summary>
+        /// Find index of key item in array.
+        /// </summary>
+        /// <typeparam name="T">Type of array and key.</typeparam>
+        /// <param name="array">Array of type T.</param>
+        /// <param name="key">Key.</param>
+        /// <param name="comparer">Comparer.</param>
+        /// <returns>Index of item if key is find or -1 when key is not found.</returns>
+        /// <exception cref="ArgumentNullException">
+        /// Thrown when array or comparer is null.
+        /// </exception>
         public int Search<T>(T[] array, T key, IComparer<T> comparer)
         {
-            return Search(array, key, 0, array.Length - 1, comparer);
-        }
+            if (array == null)
+            {
+                throw new ArgumentNullException("Expected array but was null");
+            }
 
-        private int Search<T>(T[] array, T key, int left, int right, IComparer<T> comparer)
-        {
-            ValidateParameters(array, left, right, comparer);
+            if (comparer == null)
+            {
+                throw new ArgumentNullException("Expected comparer but was null");
+            }
 
             if (array.Length == 0)
             {
                 return -1;
             }
 
-            while (left != right)
+            return Search(array, key, 0, array.Length - 1, comparer);
+        }
+
+        /// <summary>
+        /// Find index of key item in array.
+        /// </summary>
+        /// <typeparam name="T">Type of array and key.</typeparam>
+        /// <param name="array">Array of type T.</param>
+        /// <param name="key">Key.</param>
+        /// <param name="left">Left border.</param>
+        /// <param name="right">Right border.</param>
+        /// <param name="comparer">Comparer.</param>
+        /// <returns>Index of item if key is find or -1 when key is not found.</returns>
+        private int Search<T>(T[] array, T key, int left, int right, IComparer<T> comparer)
+        {
+            while (right - left > 1)
             {
-                var index = (right - left) / 2 + left;
+                var index = ((right - left) / 2) + left;
                 var compareResult = comparer.Compare(key, array[index]);
 
                 if (compareResult == 0)
@@ -41,24 +70,17 @@ namespace BinaryAlgorithms
                 }
             }
 
-            return -1;
-        }
-
-        private void ValidateParameters<T>(T[] array, int left, int right, IComparer<T> comparer)
-        {
-            if (array == null)
+            if (comparer.Compare(key, array[left]) == 0)
             {
-                throw new ArgumentNullException("Array must be not null.");
+                return left;
             }
-
-            if (comparer == null)
+            else if (comparer.Compare(key, array[right]) == 0)
             {
-                throw new ArgumentNullException("Array must be not null.");
+                return right;
             }
-
-            if (left > right || left < 0 || right > array.Length - 1)
+            else
             {
-                throw new ArgumentException("Left border must be less (or equal) than right border.");
+                return -1;
             }
         }
     }
