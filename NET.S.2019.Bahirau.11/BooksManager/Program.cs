@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using BooksManager.Services;
+using NLog;
 
 namespace BooksManager
 {
     public class Program
     {
-        private static BookListService service = new BookListFileService();
+        private static readonly BookListService Service = new BookListFileService();
 
-        public static void Main(string[] args)
+        public static void Main()
         {
+            Logger logger = LogManager.GetCurrentClassLogger();
+            logger.Log(LogLevel.Trace, LogLevel.FromOrdinal(6).ToString());
             while (MainMenu())
             {
             }
@@ -59,8 +62,8 @@ namespace BooksManager
 
         private static void LoadBooks()
         {
-            service.LoadFromStorage();
-            PrintBooks(service.ToBookArray());
+            Service.LoadFromStorage();
+            PrintBooks(Service.ToBookArray());
         }
 
         private static void AddBook()
@@ -74,21 +77,21 @@ namespace BooksManager
                 PublishingYear = GetInt("Publishing year: "),
                 PagesCount = GetInt("Count of pages: ")
             };
-            service.AddBook(book);
-            PrintBooks(service.ToBookArray());
+            Service.AddBook(book);
+            PrintBooks(Service.ToBookArray());
         }
 
         private static void RemoveBook()
         {
-            var books = service.ToBookArray();
+            var books = Service.ToBookArray();
             PrintBooks(books);
             var index = GetInt("Remove by index: ") - 1;
             if (index > -1 && index < books.Length)
             {
-                service.RemoveBook(books[index]);
+                Service.RemoveBook(books[index]);
             }
 
-            PrintBooks(service.ToBookArray());
+            PrintBooks(Service.ToBookArray());
         }
 
         private static void FindBooks()
@@ -99,22 +102,22 @@ namespace BooksManager
             switch (menuCase)
             {
                 case 1:
-                    PrintBooks(service.FindBooksByTag(BookTag.ISBN, GetString("ISBN: ")));
+                    PrintBooks(Service.FindBooksByTag(BookTag.ISBN, GetString("ISBN: ")));
                     break;
                 case 2:
-                    PrintBooks(service.FindBooksByTag(BookTag.Author, GetString("Author: ")));
+                    PrintBooks(Service.FindBooksByTag(BookTag.Author, GetString("Author: ")));
                     break;
                 case 3:
-                    PrintBooks(service.FindBooksByTag(BookTag.Title, GetString("Title: ")));
+                    PrintBooks(Service.FindBooksByTag(BookTag.Title, GetString("Title: ")));
                     break;
                 case 4:
-                    PrintBooks(service.FindBooksByTag(BookTag.Publisher, GetString("Publisher: ")));
+                    PrintBooks(Service.FindBooksByTag(BookTag.Publisher, GetString("Publisher: ")));
                     break;
                 case 5:
-                    PrintBooks(service.FindBooksByTag(BookTag.PublishingYear, GetInt("Publishing year: ")));
+                    PrintBooks(Service.FindBooksByTag(BookTag.PublishingYear, GetInt("Publishing year: ")));
                     break;
                 case 6:
-                    PrintBooks(service.FindBooksByTag(BookTag.PagesCount, GetInt("Count of pages: ")));
+                    PrintBooks(Service.FindBooksByTag(BookTag.PagesCount, GetInt("Count of pages: ")));
                     break;
                 default:
                     break;
@@ -129,33 +132,33 @@ namespace BooksManager
             switch (menuCase)
             {
                 case 1:
-                    service.SortBooksByTag(BookTag.ISBN);
+                    Service.SortBooksByTag(BookTag.ISBN);
                     break;
                 case 2:
-                    service.SortBooksByTag(BookTag.Author);
+                    Service.SortBooksByTag(BookTag.Author);
                     break;
                 case 3:
-                    service.SortBooksByTag(BookTag.Title);
+                    Service.SortBooksByTag(BookTag.Title);
                     break;
                 case 4:
-                    service.SortBooksByTag(BookTag.Publisher);
+                    Service.SortBooksByTag(BookTag.Publisher);
                     break;
                 case 5:
-                    service.SortBooksByTag(BookTag.PublishingYear);
+                    Service.SortBooksByTag(BookTag.PublishingYear);
                     break;
                 case 6:
-                    service.SortBooksByTag(BookTag.PagesCount);
+                    Service.SortBooksByTag(BookTag.PagesCount);
                     break;
                 default:
                     break;
             }
 
-            PrintBooks(service.ToBookArray());
+            PrintBooks(Service.ToBookArray());
         }
 
         private static void SaveBooks()
         {
-            service.SaveToStorage();
+            Service.SaveToStorage();
             Console.WriteLine("Books saved successfully");
         }
 

@@ -54,6 +54,8 @@
     <Compile Include="Comparers\AuthorComparer.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="Extensions\BookExtension.cs" />
+    <Compile Include="Loggers\ILogger.cs" />
+    <Compile Include="Loggers\NLogger.cs" />
     <Compile Include="Services\BookListFileService.cs" />
     <Compile Include="Comparers\ISBNComparer.cs" />
     <Compile Include="Services\BookListService.cs" />
