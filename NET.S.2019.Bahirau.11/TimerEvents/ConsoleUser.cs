@@ -28,7 +28,7 @@ namespace TimerEvents
         /// <param name="e">Timer arguments.</param>
         public void ReceiveMessage(object sender, TimerEventArgs e)
         {
-            Console.Write("User received a message: ");
+            Console.Write("User #{0} received a message: ", UserId);
             Console.WriteLine(e.Message);
             Console.WriteLine(" Sender string representation: {0}", sender);
         }
