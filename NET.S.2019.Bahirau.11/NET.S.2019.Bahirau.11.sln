@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksManager", "BooksManage
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibonacci", "Fibonacci\Fibonacci.csproj", "{D40791DF-D264-4DF5-841A-B45FE90A8D18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryAlgorithms", "BinaryAlgorithms\BinaryAlgorithms.csproj", "{55CF1E08-772B-4095-90B7-3EDC34D236E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryAlgorithms.Tests", "BinaryAlgorithms.Tests\BinaryAlgorithms.Tests.csproj", "{C3F16ED3-B38C-496A-90E1-9D0B1BB0D97C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{D40791DF-D264-4DF5-841A-B45FE90A8D18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D40791DF-D264-4DF5-841A-B45FE90A8D18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D40791DF-D264-4DF5-841A-B45FE90A8D18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55CF1E08-772B-4095-90B7-3EDC34D236E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55CF1E08-772B-4095-90B7-3EDC34D236E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55CF1E08-772B-4095-90B7-3EDC34D236E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55CF1E08-772B-4095-90B7-3EDC34D236E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3F16ED3-B38C-496A-90E1-9D0B1BB0D97C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F16ED3-B38C-496A-90E1-9D0B1BB0D97C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F16ED3-B38C-496A-90E1-9D0B1BB0D97C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F16ED3-B38C-496A-90E1-9D0B1BB0D97C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
