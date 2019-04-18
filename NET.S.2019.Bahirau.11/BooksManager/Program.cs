@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using BooksManager.Services;
-using NLog;
 
 namespace BooksManager
 {
@@ -11,8 +10,6 @@ namespace BooksManager
 
         public static void Main()
         {
-            Logger logger = LogManager.GetCurrentClassLogger();
-            logger.Log(LogLevel.Trace, LogLevel.FromOrdinal(6).ToString());
             while (MainMenu())
             {
             }
