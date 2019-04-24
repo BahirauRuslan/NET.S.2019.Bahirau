@@ -16,19 +16,19 @@ namespace CustomQueue
         private readonly T[] _arr;
 
         /// <summary>
-        /// Current index position.
-        /// </summary>
-        private int _position;
-
-        /// <summary>
         /// Head.
         /// </summary>
-        private int _head;
+        private readonly int _head;
 
         /// <summary>
         /// Tail.
         /// </summary>
-        private int _tail;
+        private readonly int _tail;
+
+        /// <summary>
+        /// Current index position.
+        /// </summary>
+        private int _position;
 
         /// <summary>
         /// Create new MyEnumerator object.
