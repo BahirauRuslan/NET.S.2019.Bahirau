@@ -39,6 +39,7 @@ namespace CustomQueue
             _arr = arr;
             _head = head;
             _tail = tail;
+            _position = _head - 1;
         }
 
         /// <summary>
