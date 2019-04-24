@@ -245,7 +245,7 @@ namespace CustomQueue
         /// <returns>Generic enumerator.</returns>
         public IEnumerator<T> GetEnumerator()
         {
-            return new MyEnumerator<T>(_items);
+            return new MyEnumerator<T>(_items, _head, _tail);
         }
 
         /// <summary>
