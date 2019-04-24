@@ -254,7 +254,7 @@ namespace CustomQueue
         /// <returns>Enumerator.</returns>
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return _items.GetEnumerator();
+            return GetEnumerator();
         }
 
         /// <summary>
