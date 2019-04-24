@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomQueue", "CustomQueue\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomQueue.Tests", "CustomQueue.Tests\CustomQueue.Tests.csproj", "{CEC9D4A0-8517-4CE0-AAC1-770C5A32FA1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomMatrix", "CustomMatrix\CustomMatrix.csproj", "{A3D13102-E1E2-4CF9-802A-5ABC244C6E6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CEC9D4A0-8517-4CE0-AAC1-770C5A32FA1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEC9D4A0-8517-4CE0-AAC1-770C5A32FA1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEC9D4A0-8517-4CE0-AAC1-770C5A32FA1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3D13102-E1E2-4CF9-802A-5ABC244C6E6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D13102-E1E2-4CF9-802A-5ABC244C6E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D13102-E1E2-4CF9-802A-5ABC244C6E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D13102-E1E2-4CF9-802A-5ABC244C6E6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
