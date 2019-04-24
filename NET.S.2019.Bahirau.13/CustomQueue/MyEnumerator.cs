@@ -18,15 +18,27 @@ namespace CustomQueue
         /// <summary>
         /// Current index position.
         /// </summary>
-        private int _position = -1;
+        private int _position;
+
+        /// <summary>
+        /// Head.
+        /// </summary>
+        private int _head;
+
+        /// <summary>
+        /// Tail.
+        /// </summary>
+        private int _tail;
 
         /// <summary>
         /// Create new MyEnumerator object.
         /// </summary>
         /// <param name="arr">Array of items.</param>
-        public MyEnumerator(T[] arr)
+        public MyEnumerator(T[] arr, int head, int tail)
         {
             _arr = arr;
+            _head = head;
+            _tail = tail;
         }
 
         /// <summary>
@@ -40,7 +52,7 @@ namespace CustomQueue
         {
             get
             {
-                if (_position == -1 || _position > _arr.Length - 1)
+                if (_position == _head - 1 || _position > _tail)
                 {
                     throw new InvalidOperationException();
                 }
@@ -68,7 +80,7 @@ namespace CustomQueue
         /// <returns>True if position moved, in other case - false.</returns>
         public bool MoveNext()
         {
-            if (_position < _arr.Length - 1)
+            if (_position < _tail)
             {
                 _position++;
                 return true;
@@ -82,7 +94,7 @@ namespace CustomQueue
         /// </summary>
         public void Reset()
         {
-            _position = -1;
+            _position = _head - 1;
         }
     }
 }
