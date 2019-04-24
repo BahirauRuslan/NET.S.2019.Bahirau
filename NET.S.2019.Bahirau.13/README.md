@@ -18,10 +18,10 @@ Add unit tests.
 Provide for the use of a pluggable interface to implement an order relationship. 
 Implement three tree traversal methods: direct (preorder), transverse (inorder), and reverse (postorder): 
 use an iterator (yield) to implement. Test the developed class using the following types:
-+ System.Int32 (use default comparison and plug-in comparator);
-+ System.String (use default comparison and plug-in comparator);
-+ Custom Book class, for objects of which order relations are implemented (use default comparison and plug-in comparator);
-+ Custom Point structure, for objects of which the order relation is not implemented (use a plug-in comparator).  
+	+ System.Int32 (use default comparison and plug-in comparator);
+	+ System.String (use default comparison and plug-in comparator);
+	+ Custom Book class, for objects of which order relations are implemented (use default comparison and plug-in comparator);
+	+ Custom Point structure, for objects of which the order relation is not implemented (use a plug-in comparator).  
 
 
 Ruslan Bahirau  
