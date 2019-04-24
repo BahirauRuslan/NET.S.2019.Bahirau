@@ -15,10 +15,13 @@
         T this[int i, int j] { get; set; }
 
         /// <summary>
-        /// Indicates that matrix and this matrix have the same size.
+        /// Count of rows.
         /// </summary>
-        /// <param name="matrix">Another matrix.</param>
-        /// <returns>True - matrix and this matrix have the same size. False - another case.</returns>
-        bool IsSameSize(IMatrix<T> matrix);
+        int RowsCount { get; }
+
+        /// <summary>
+        /// Count of columns.
+        /// </summary>
+        int ColumnsCount { get; }
     }
 }
