@@ -81,7 +81,7 @@ namespace CustomQueue
         /// <returns>True if position moved, in other case - false.</returns>
         public bool MoveNext()
         {
-            if (_position < _tail)
+            if (_position < _tail && _position >= -1)
             {
                 _position++;
                 return true;
