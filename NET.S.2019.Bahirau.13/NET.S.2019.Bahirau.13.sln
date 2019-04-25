@@ -5,11 +5,15 @@ VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomQueue", "CustomQueue\CustomQueue.csproj", "{F7F7102C-882E-419E-8681-E5AC2DAC24CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomQueue.Tests", "CustomQueue.Tests\CustomQueue.Tests.csproj", "{CEC9D4A0-8517-4CE0-AAC1-770C5A32FA1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomQueue.Tests", "CustomQueue.Tests\CustomQueue.Tests.csproj", "{CEC9D4A0-8517-4CE0-AAC1-770C5A32FA1A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomMatrix", "CustomMatrix\CustomMatrix.csproj", "{A3D13102-E1E2-4CF9-802A-5ABC244C6E6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomMatrix.Tests", "CustomMatrix.Tests\CustomMatrix.Tests.csproj", "{EAF61971-C979-41F3-B1F5-E9C08B31F0ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomMatrix.Tests", "CustomMatrix.Tests\CustomMatrix.Tests.csproj", "{EAF61971-C979-41F3-B1F5-E9C08B31F0ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTree", "BinaryTree\BinaryTree.csproj", "{028D6DCF-6FEF-4984-ADF4-C8001ED4CC48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTree.Tests", "BinaryTree.Tests\BinaryTree.Tests.csproj", "{46B3F3E1-909A-4EFC-9459-8BE98DCBF232}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{EAF61971-C979-41F3-B1F5-E9C08B31F0ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAF61971-C979-41F3-B1F5-E9C08B31F0ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAF61971-C979-41F3-B1F5-E9C08B31F0ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{028D6DCF-6FEF-4984-ADF4-C8001ED4CC48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{028D6DCF-6FEF-4984-ADF4-C8001ED4CC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{028D6DCF-6FEF-4984-ADF4-C8001ED4CC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{028D6DCF-6FEF-4984-ADF4-C8001ED4CC48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46B3F3E1-909A-4EFC-9459-8BE98DCBF232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46B3F3E1-909A-4EFC-9459-8BE98DCBF232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46B3F3E1-909A-4EFC-9459-8BE98DCBF232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46B3F3E1-909A-4EFC-9459-8BE98DCBF232}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

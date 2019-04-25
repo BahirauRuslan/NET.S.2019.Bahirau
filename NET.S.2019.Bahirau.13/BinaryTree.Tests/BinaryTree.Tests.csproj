@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -10,6 +10,16 @@
     <PackageReference Include="nunit" Version="3.10.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BinaryTree\BinaryTree.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BooksManager">
+      <HintPath>..\..\NET.S.2019.Bahirau.08\BooksManager\bin\Debug\BooksManager.exe</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
