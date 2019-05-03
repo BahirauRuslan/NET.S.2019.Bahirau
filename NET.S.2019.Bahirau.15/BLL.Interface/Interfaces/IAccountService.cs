@@ -5,7 +5,7 @@ namespace BLL.Interface.Interfaces
 {
     public interface IAccountService
     {
-        void AddAccount(Holder holder, AccountType type);
+        void AddAccount(Holder holder, string type);
 
         void RemoveAccount(long id);
 
@@ -14,6 +14,10 @@ namespace BLL.Interface.Interfaces
         void CloseAccount(long id);
 
         Account GetAccount(long id);
+
+        void Deposit(long id, decimal money);
+
+        void Withdraw(long id, decimal money);
 
         IEnumerable<Account> GetAllAccounts();
 
