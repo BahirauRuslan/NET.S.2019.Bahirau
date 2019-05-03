@@ -45,6 +45,10 @@
     <Compile Include="Mappers\BonusMapper.cs" />
     <Compile Include="Mappers\HolderMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceImplementation\AccountIdService.cs" />
+    <Compile Include="ServiceImplementation\AccountService.cs" />
+    <Compile Include="ServiceImplementation\HolderIdService.cs" />
+    <Compile Include="ServiceImplementation\HolderService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL.Interface\BLL.Interface.csproj">
@@ -56,8 +60,6 @@
       <Name>DAL.Interface</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ServiceImplementation\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
