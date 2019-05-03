@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL.Interface.DTO
 {
-    public enum DTOAccountType
+    [Serializable]
+    public class DTOAccountType
     {
-        Base,
-        Gold,
-        Platinum
+        public string TypeName { get; set; }
     }
 }
