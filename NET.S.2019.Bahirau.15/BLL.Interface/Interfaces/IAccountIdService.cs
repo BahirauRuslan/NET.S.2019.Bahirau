@@ -4,6 +4,8 @@ namespace BLL.Interface.Interfaces
 {
     public interface IAccountIdService
     {
-        long GenerateAccountId(Holder holder);
+        long PrimaryNumber { get; set; }
+
+        long GenerateAccountId();
     }
 }
