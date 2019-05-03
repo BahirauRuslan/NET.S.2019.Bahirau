@@ -1,53 +1,42 @@
 ﻿using System;
-using System.Linq;
-using BLL.Interface.Entities;
 using BLL.Interface.Interfaces;
 using DependencyResolver;
 using Ninject;
 
 namespace ConsolePL
 {
-    class Program
+    internal class Program
     {
-        private static readonly IKernel resolver;
+        private static readonly IKernel Resolver;
 
         static Program()
         {
-            resolver = new StandardKernel();
-            resolver.ConfigurateResolver();
+            Resolver = new StandardKernel();
+            Resolver.ConfigurateResolver();
         }
 
-        static void Main(string[] args)
+        internal static void Main()
         {
-            IAccountService service = resolver.Get<IAccountService>();
-            IAccountNumberCreateService creator = resolver.Get<IAccountNumberCreateService>();
+            var accountService = Resolver.Get<IAccountService>();
+            var holderService = Resolver.Get<IHolderService>();
 
-            service.OpenAccount("Account owner 1", AccountType.Base, creator);
-            service.OpenAccount("Account owner 2", AccountType.Base, creator);
-            service.OpenAccount("Account owner 3", AccountType.Silver, creator);
-            service.OpenAccount("Account owner 4", AccountType.Base, creator);
+            holderService.AddHolder("Ruslan", "Bahirau");
 
-            var creditNumbers = service.GetAllAccounts().Select(acc => acc.AccountNumber).ToArray();
-
-            foreach (var t in creditNumbers)
+            foreach (var holder in holderService.GetAllHolders())
             {
-                service.DepositAccount(t, 100);
+                Console.WriteLine(holder);
+                accountService.AddAccount(holder, "Gold");
             }
 
-            foreach (var item in service.GetAllAccounts())
+            foreach (var holder in holderService.GetAllHolders())
             {
-                Console.WriteLine(item);
+                Console.WriteLine(holder);
             }
 
-            foreach (var t in creditNumbers)
-            {
-                service.WithdrawAccount(t, 10);
-            }
+            accountService.UpdateAll();
+            holderService.UpdateAll();
 
-            foreach (var item in service.GetAllAccounts())
-            {
-                Console.WriteLine(item);
-            }
+            Console.ReadKey();
         }
     }
 }
