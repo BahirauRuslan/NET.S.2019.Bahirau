@@ -2,6 +2,6 @@
 {
     public interface IHolderIdService
     {
-        long GenerateHolderId(string name, string surname);
+        long GenerateHolderId();
     }
 }
