@@ -1,8 +1,9 @@
-﻿/*using BLL.Interface.Interfaces;
+﻿using BLL.Interface.Interfaces;
 using BLL.ServiceImplementation;
 using DAL.Interface.DTO;
 using DAL.Interface.Interfaces;
-using DAL.Repositories;*/
+using DAL.Loggers;
+using DAL.Repositories;
 using Ninject;
 
 namespace DependencyResolver
@@ -10,21 +11,19 @@ namespace DependencyResolver
     public static class ResolverConfig
     {
         public static void ConfigurateResolver(this IKernel kernel)
-        {/*
-            kernel.Bind<IRepository<DTOAccount>>()
-                .To<AccountBinaryFileRepository>().WithConstructorArgument("filePath", "accounts.bin");
-            kernel.Bind<IRepository<DTOHolder>>()
-                .To<HolderBinaryFileRepository>().WithConstructorArgument("filePath", "holders.bin");
+        {
+            kernel.Bind<IReadableRepository<string>>()
+                .To<TextReadableRepository>().WithConstructorArgument("filePath", "uris.txt");
+            kernel.Bind<IWriteableRepository<DTOSimpleURI>>()
+                .To<XMLWriteableRepository>().WithConstructorArgument("filePath", "uris.xml");
 
-            kernel.Bind<IAccountIdService>().To<AccountIdService>();
-            kernel.Bind<IHolderIdService>().To<HolderIdService>();
+            kernel.Bind<ILogger>().To<NInfoLogger>();
 
-            kernel.Bind<IAccountService>()
-                .To<AccountService>().WithConstructorArgument("accountIdService", kernel.Get<IAccountIdService>())
-                .WithConstructorArgument("repository", kernel.Get<IRepository<DTOAccount>>());
-            kernel.Bind<IHolderService>()
-                .To<HolderService>().WithConstructorArgument("holderIdService", kernel.Get<IHolderIdService>())
-                .WithConstructorArgument("repository", kernel.Get<IRepository<DTOHolder>>());*/
+            kernel.Bind<IExporter>()
+                .To<Exporter>()
+                .WithConstructorArgument("fromRepository", kernel.Get<IReadableRepository<string>>())
+                .WithConstructorArgument("toRepository", kernel.Get<IWriteableRepository<DTOSimpleURI>>())
+                .WithConstructorArgument("logger", kernel.Get<NInfoLogger>());
         }
     }
 }
