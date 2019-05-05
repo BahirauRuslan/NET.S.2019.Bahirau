@@ -40,17 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Account.cs" />
-    <Compile Include="Entities\AccountEventArgs.cs" />
-    <Compile Include="Entities\AccountType.cs" />
-    <Compile Include="Entities\Bonus.cs" />
-    <Compile Include="Entities\Holder.cs" />
-    <Compile Include="Interfaces\IAccountIdService.cs" />
-    <Compile Include="Interfaces\IAccountService.cs" />
-    <Compile Include="Interfaces\IHolderIdService.cs" />
-    <Compile Include="Interfaces\IHolderService.cs" />
+    <Compile Include="Entities\SimpleURI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
