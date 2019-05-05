@@ -16,13 +16,18 @@ namespace BLL.ServiceImplementation
         /// </summary>
         /// <param name="fromRepository">Input repository.</param>
         /// <param name="toRepository">Output repository.</param>
+        /// <param name="logger">Logger.</param>
         /// <exception cref="ArgumentNullException">
         /// Thrown when fromRepository is null. -or- toRepository is null.
         /// </exception>
-        public Exporter(IReadableRepository<string> fromRepository, IWriteableRepository<DTOSimpleURI> toRepository)
+        public Exporter(
+            IReadableRepository<string> fromRepository, 
+            IWriteableRepository<DTOSimpleURI> toRepository, 
+            ILogger logger = null)
         {
             FromRepository = fromRepository ?? throw new ArgumentNullException("FromRepository must not be null");
             ToRepository = toRepository ?? throw new ArgumentNullException("ToRepository must not be null");
+            StringToURIMapper.Logger = logger;
         }
 
         /// <summary>
