@@ -1,6 +1,8 @@
-﻿using System;/*
+﻿using System;
+using System.IO;
+using System.Xml.Linq;
 using BLL.Interface.Interfaces;
-using DependencyResolver;*/
+using DependencyResolver;
 using Ninject;
 
 namespace ConsolePL
@@ -12,29 +14,27 @@ namespace ConsolePL
         static Program()
         {
             Resolver = new StandardKernel();
-            //Resolver.ConfigurateResolver();
+            Resolver.ConfigurateResolver();
         }
 
         internal static void Main()
-        {/*
-            var accountService = Resolver.Get<IAccountService>();
-            var holderService = Resolver.Get<IHolderService>();
+        {
+            var exporter = Resolver.Get<IExporter>();
 
-            holderService.AddHolder("Ruslan", "Bahirau");
+            exporter.ExportAll();
 
-            foreach (var holder in holderService.GetAllHolders())
+            Console.WriteLine("Text file:");
+            using (var reader = new StreamReader(File.OpenRead("uris.txt")))
             {
-                Console.WriteLine(holder);
-                accountService.AddAccount(holder, "Gold");
+                string uri;
+                while ((uri = reader.ReadLine()) != null)
+                {
+                    Console.WriteLine(uri);
+                }
             }
 
-            foreach (var holder in holderService.GetAllHolders())
-            {
-                Console.WriteLine(holder);
-            }
-
-            accountService.UpdateAll();
-            holderService.UpdateAll();*/
+            Console.WriteLine();
+            Console.WriteLine(XDocument.Load("uris.xml"));
 
             Console.ReadKey();
         }
