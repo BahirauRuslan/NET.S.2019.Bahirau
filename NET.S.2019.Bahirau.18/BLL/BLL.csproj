@@ -43,6 +43,7 @@
     <Compile Include="Mappers\SimpleURIMapper.cs" />
     <Compile Include="Mappers\StringToURIMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceImplementation\Exporter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL.Interface\BLL.Interface.csproj">
@@ -54,8 +55,6 @@
       <Name>DAL.Interface</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ServiceImplementation\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
