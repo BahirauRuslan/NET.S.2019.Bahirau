@@ -8,15 +8,10 @@ namespace DAL.Repositories
     /// <summary>
     /// Repository that can read text file.
     /// </summary>
-    public class TextReadableRepository : IReadableRepository<string>
+    public class TextReadableRepository : FileRepository, IReadableRepository<string>
     {
         /// <summary>
-        /// File path.
-        /// </summary>
-        private readonly string _filePath;
-
-        /// <summary>
-        /// Creates TextReadableRepository.
+        /// Creates FileRepository.
         /// </summary>
         /// <param name="filePath">File path.</param>
         /// <exception cref="ArgumentNullException">
@@ -25,24 +20,8 @@ namespace DAL.Repositories
         /// <exception cref="ArgumentException">
         /// Thrown when filePath is empty. -or- file doesn't exist.
         /// </exception>
-        public TextReadableRepository(string filePath)
+        public TextReadableRepository(string filePath) : base(filePath)
         {
-            if (filePath == null)
-            {
-                throw new ArgumentNullException("File path must not be null");
-            }
-
-            if (string.IsNullOrWhiteSpace(filePath))
-            {
-                throw new ArgumentException("File path must not be empty");
-            }
-
-            if (!File.Exists(filePath))
-            {
-                throw new ArgumentException("File does not exist");
-            }
-
-            _filePath = filePath;
         }
 
         /// <summary>
@@ -51,7 +30,7 @@ namespace DAL.Repositories
         /// <returns>All strings.</returns>
         public IEnumerable<string> GetAll()
         {
-            using (var reader = new StreamReader(File.OpenRead(this._filePath)))
+            using (var reader = new StreamReader(File.OpenRead(this.FilePath)))
             {
                 string uri;
                 while ((uri = reader.ReadLine()) != null)
