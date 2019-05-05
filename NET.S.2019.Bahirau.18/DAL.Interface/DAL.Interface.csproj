@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Interfaces\ILogger.cs" />
     <Compile Include="Interfaces\IReadableRepository.cs" />
+    <Compile Include="Interfaces\IWriteableRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
