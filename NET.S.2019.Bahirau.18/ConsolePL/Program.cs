@@ -1,6 +1,6 @@
-﻿using System;
+﻿using System;/*
 using BLL.Interface.Interfaces;
-using DependencyResolver;
+using DependencyResolver;*/
 using Ninject;
 
 namespace ConsolePL
@@ -12,11 +12,11 @@ namespace ConsolePL
         static Program()
         {
             Resolver = new StandardKernel();
-            Resolver.ConfigurateResolver();
+            //Resolver.ConfigurateResolver();
         }
 
         internal static void Main()
-        {
+        {/*
             var accountService = Resolver.Get<IAccountService>();
             var holderService = Resolver.Get<IHolderService>();
 
@@ -34,7 +34,7 @@ namespace ConsolePL
             }
 
             accountService.UpdateAll();
-            holderService.UpdateAll();
+            holderService.UpdateAll();*/
 
             Console.ReadKey();
         }
