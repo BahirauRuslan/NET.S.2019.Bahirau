@@ -1,5 +1,8 @@
-﻿using BLL.Interface.Interfaces;
+﻿using System.Collections.Generic;
+using BLL.Interface.Interfaces;
 using BLL.ServiceImplementation;
+using DAL.DB;
+using DAL.DB.Repositories;
 using DAL.Interface.DTO;
 using DAL.Interface.Interfaces;
 using DAL.Repositories;
@@ -9,12 +12,19 @@ namespace DependencyResolver
 {
     public static class ResolverConfig
     {
+        private static readonly UnitOfWork UnitOfWork = new UnitOfWork();
+
         public static void ConfigurateResolver(this IKernel kernel)
         {
-            kernel.Bind<IRepository<DTOAccount>>()
-                .To<AccountBinaryFileRepository>().WithConstructorArgument("filePath", "accounts.bin");
-            kernel.Bind<IRepository<DTOHolder>>()
-                .To<HolderBinaryFileRepository>().WithConstructorArgument("filePath", "holders.bin");
+            UnitOfWork.Holders.Add(new DTOHolder()
+            {
+                Id = 1,
+                Name = "Ruslan",
+                Surname = "Borisov",
+                Accounts = new List<long>()
+            });
+            kernel.Bind<IRepository<DTOAccount>>().ToConstant(UnitOfWork.Accounts);
+            kernel.Bind<IRepository<DTOHolder>>().ToConstant(UnitOfWork.Holders);
 
             kernel.Bind<IAccountIdService>().To<AccountIdService>();
             kernel.Bind<IHolderIdService>().To<HolderIdService>();
