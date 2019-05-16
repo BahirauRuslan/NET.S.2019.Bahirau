@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		CodeMap1.dgml = CodeMap1.dgml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL.DB", "DAL.DB\DAL.DB.csproj", "{E9D5E807-08DE-4DC2-88BA-217277D3EB69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{8E4E34D9-4F24-449D-AC2B-85FF8B0ABB44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E4E34D9-4F24-449D-AC2B-85FF8B0ABB44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E4E34D9-4F24-449D-AC2B-85FF8B0ABB44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9D5E807-08DE-4DC2-88BA-217277D3EB69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9D5E807-08DE-4DC2-88BA-217277D3EB69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9D5E807-08DE-4DC2-88BA-217277D3EB69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9D5E807-08DE-4DC2-88BA-217277D3EB69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
