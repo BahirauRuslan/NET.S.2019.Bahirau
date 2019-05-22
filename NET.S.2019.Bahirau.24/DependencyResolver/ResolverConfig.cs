@@ -5,7 +5,6 @@ using DAL.DB;
 using DAL.DB.Repositories;
 using DAL.Interface.DTO;
 using DAL.Interface.Interfaces;
-using DAL.Repositories;
 using Ninject;
 
 namespace DependencyResolver

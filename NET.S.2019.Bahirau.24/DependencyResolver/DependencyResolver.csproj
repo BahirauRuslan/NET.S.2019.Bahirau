@@ -63,17 +63,9 @@
       <Project>{e80202d7-4c68-4467-995c-fe95fe14a37c}</Project>
       <Name>DAL.DB</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL.Fake\DAL.Fake.csproj">
-      <Project>{7a11cfc2-02c1-44cb-9de0-5ef6a5b2fede}</Project>
-      <Name>DAL.Fake</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DAL.Interface\DAL.Interface.csproj">
       <Project>{9501e6ea-aa42-46b3-b9aa-ee8aec8697c9}</Project>
       <Name>DAL.Interface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{fea0d8b2-12d3-46cc-8248-9288d38c8f33}</Project>
-      <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
