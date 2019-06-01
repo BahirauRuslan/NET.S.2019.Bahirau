@@ -3,16 +3,7 @@ using BLL.Interface.Entities;
 
 namespace BLL.Interface.Interfaces
 {
-    public interface IHolderService
+    public interface IHolderService : ICRUDService<Holder>, IUptatable
     {
-        void AddHolder(string name, string surname);
-
-        void RemoveHolder(long id);
-
-        Holder GetHolder(long id);
-
-        IEnumerable<Holder> GetAllHolders();
-
-        void UpdateAll();
     }
 }
