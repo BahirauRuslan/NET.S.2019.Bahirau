@@ -9,7 +9,7 @@ using Moq;
 using NUnit.Framework;
 
 namespace BLL.Tests
-{
+{/*
     [TestFixture]
     public class AccountServiceTests
     {
@@ -61,5 +61,5 @@ namespace BLL.Tests
             var accountService = new AccountService(_accountIdService, repositoryMock.Object);
             accountService.AddAccount(new Holder(), "Base");
         }
-    }
+    }*/
 }
