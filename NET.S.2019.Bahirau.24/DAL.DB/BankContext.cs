@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity;
-using DAL.DB.DomainClasses;
+using DAL.Interface.DTO;
 
 namespace DAL.DB
 {
@@ -9,8 +9,12 @@ namespace DAL.DB
         {
         }
 
-        public DbSet<DbAccount> Accounts { get; set; }
+        public DbSet<DTOAccount> Accounts { get; set; }
 
-        public DbSet<DbHolder> Holders { get; set; }
+        public DbSet<DTOAccountType> AccountTypes { get; set; }
+
+        public DbSet<DTOHolder> Holders { get; set; }
+
+        public DbSet<DTONotification> Notifications { get; set; }
     }
 }
