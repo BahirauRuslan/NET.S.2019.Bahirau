@@ -9,6 +9,8 @@ namespace DAL.DB
         private bool disposed = false;
         private AccountDBRepository _accountDBRepository;
         private HolderDBRepository _holderDBRepository;
+        private AccountTypeDBRepository _accountTypeDBRepository;
+        private NotificationDBRepository _notificationDBRepository;
 
         public AccountDBRepository Accounts
         {
@@ -33,6 +35,32 @@ namespace DAL.DB
                 }
 
                 return _holderDBRepository;
+            }
+        }
+
+        public AccountTypeDBRepository AccountTypes
+        {
+            get
+            {
+                if (_accountTypeDBRepository == null)
+                {
+                    _accountTypeDBRepository = new AccountTypeDBRepository(_bankContext);
+                }
+
+                return _accountTypeDBRepository;
+            }
+        }
+
+        public NotificationDBRepository Notifications
+        {
+            get
+            {
+                if (_notificationDBRepository == null)
+                {
+                    _notificationDBRepository = new NotificationDBRepository(_bankContext);
+                }
+
+                return _notificationDBRepository;
             }
         }
 
