@@ -6,6 +6,8 @@ namespace DAL.Interface.Interfaces
     {
         IEnumerable<T> Items { get; }
 
+        T Get(long id);
+
         void Add(T item);
 
         void Remove(T item);
