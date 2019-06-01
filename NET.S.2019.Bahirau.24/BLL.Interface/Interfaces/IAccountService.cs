@@ -3,24 +3,14 @@ using BLL.Interface.Entities;
 
 namespace BLL.Interface.Interfaces
 {
-    public interface IAccountService
+    public interface IAccountService : ICRUDService<Account>, IUptatable
     {
-        void AddAccount(Holder holder, string type);
+        void SetEnabled(Account account, bool enabled);
 
-        void RemoveAccount(long id);
+        void Deposit(Account account, decimal money);
 
-        void OpenAccount(long id);
+        void Withdraw(Account account, decimal money);
 
-        void CloseAccount(long id);
-
-        Account GetAccount(long id);
-
-        void Deposit(long id, decimal money);
-
-        void Withdraw(long id, decimal money);
-
-        IEnumerable<Account> GetAllAccounts();
-
-        void UpdateAll();
+        void Transfer(Account sender, Account receiver, decimal money);
     }
 }
