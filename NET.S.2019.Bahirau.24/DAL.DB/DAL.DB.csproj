@@ -49,13 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BankContext.cs" />
-    <Compile Include="DomainClasses\DbAccount.cs" />
-    <Compile Include="DomainClasses\DbHolder.cs" />
-    <Compile Include="Mappers\AccountMapper.cs" />
-    <Compile Include="Mappers\HolderMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountDBRepository.cs" />
+    <Compile Include="Repositories\AccountTypeDBRepository.cs" />
+    <Compile Include="Repositories\DBRepository.cs" />
     <Compile Include="Repositories\HolderDBRepository.cs" />
+    <Compile Include="Repositories\NotificationDBRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
