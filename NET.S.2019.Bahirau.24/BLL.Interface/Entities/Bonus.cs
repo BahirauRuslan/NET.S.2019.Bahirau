@@ -1,63 +1,31 @@
 ﻿using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace BLL.Interface.Entities
 {
-    public class Bonus : IEquatable<Bonus>, IComparable<Bonus>
+    public delegate void BonusEvent(Bonus sender, BonusEventArgs e);
+
+    [DisplayName("Bonus")]
+    public class Bonus
     {
-        private int _bonusPoints;
+        private int _points;
 
-        public Bonus(int bonusPoints = 0)
-        {
-            if (bonusPoints < 0)
-            {
-                throw new ArgumentException("Bonus points must be non-negative");
-            }
+        public event BonusEvent OnTransaction;
 
-            _bonusPoints = bonusPoints;
-        }
-
-        public int BonusPoints
+        [DisplayName("Points")]
+        public int Points
         {
             get
             {
-                return _bonusPoints;
+                return _points;
             }
 
             set
             {
-                _bonusPoints = (value > 0) ? value : 0;
+                OnTransaction?.Invoke(this, new BonusEventArgs(_points, value));
+                _points = value;
             }
-        }
-
-        public int CompareTo(Bonus other)
-        {
-            if (other == null)
-            {
-                return 1;
-            }
-            
-            return _bonusPoints.CompareTo(other._bonusPoints);
-        }
-
-        public override bool Equals(object obj)
-        {
-            return this.Equals(obj as Bonus);
-        }
-
-        public bool Equals(Bonus other)
-        {
-            return other != null &&
-                   _bonusPoints == other._bonusPoints;
-        }
-
-        public override int GetHashCode()
-        {
-            return 1514057882 + _bonusPoints.GetHashCode();
-        }
-
-        public override string ToString()
-        {
-            return $"Bonus points: { _bonusPoints }";
         }
     }
 }
