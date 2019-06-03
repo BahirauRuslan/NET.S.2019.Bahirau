@@ -19,13 +19,15 @@ namespace DependencyResolver
             kernel.Bind<IRepository<DTOHolder>>().ToConstant(UnitOfWork.Holders);
             kernel.Bind<IRepository<DTOAccountType>>().ToConstant(UnitOfWork.AccountTypes);
             kernel.Bind<IRepository<DTONotification>>().ToConstant(UnitOfWork.Notifications);
-            /*
+
             kernel.Bind<IAccountService>()
-                .To<AccountService>().WithConstructorArgument("accountIdService", kernel.Get<IAccountIdService>())
-                .WithConstructorArgument("repository", kernel.Get<IRepository<DTOAccount>>());
+                .To<AccountService>().WithConstructorArgument("repository", kernel.Get<IRepository<DTOAccount>>());
+            kernel.Bind<IAccountTypeService>()
+                .To<AccountTypeService>().WithConstructorArgument("repository", kernel.Get<IRepository<DTOAccountType>>());
             kernel.Bind<IHolderService>()
-                .To<HolderService>().WithConstructorArgument("holderIdService", kernel.Get<IHolderIdService>())
-                .WithConstructorArgument("repository", kernel.Get<IRepository<DTOHolder>>());*/
+                .To<HolderService>().WithConstructorArgument("repository", kernel.Get<IRepository<DTOHolder>>());
+            kernel.Bind<INotificationService>()
+                .To<NotificationService>().WithConstructorArgument("repository", kernel.Get<IRepository<DTONotification>>());
         }
     }
 }
