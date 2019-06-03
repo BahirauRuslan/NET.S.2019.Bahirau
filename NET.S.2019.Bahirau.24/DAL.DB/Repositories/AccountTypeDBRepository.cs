@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using DAL.Interface.DTO;
-using DAL.Interface.Interfaces;
 
 namespace DAL.DB.Repositories
 {
