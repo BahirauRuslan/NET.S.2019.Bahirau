@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using AutoMapper;
 using BLL.Interface.Entities;
 using DAL.Interface.DTO;
 
@@ -8,40 +9,22 @@ namespace BLL.Mappers
     {
         public static DTOHolder ToDTOHolder(this Holder holder)
         {
-            return new DTOHolder
-            {
-                Id = holder.Id,
-                Name = holder.Name,
-                Surname = holder.Surname,
-                Accounts = holder.Accounts
-            };
+            return Mapper.Map<DTOHolder>(holder);
         }
 
         public static Holder ToHolder(this DTOHolder dtoHolder)
         {
-            return new Holder
-            {
-                Id = dtoHolder.Id,
-                Name = dtoHolder.Name,
-                Surname = dtoHolder.Surname,
-                Accounts = dtoHolder.Accounts
-            };
+            return Mapper.Map<Holder>(dtoHolder);
         }
 
         public static IEnumerable<DTOHolder> ToDTOHolders(this IEnumerable<Holder> holders)
         {
-            foreach (var holder in holders)
-            {
-                yield return holder.ToDTOHolder();
-            }
+            return Mapper.Map<IEnumerable<DTOHolder>>(holders);
         }
 
         public static IEnumerable<Holder> ToHolders(this IEnumerable<DTOHolder> dtoHolders)
         {
-            foreach (var dtoHolder in dtoHolders)
-            {
-                yield return dtoHolder.ToHolder();
-            }
+            return Mapper.Map<IEnumerable<Holder>>(dtoHolders);
         }
     }
 }
