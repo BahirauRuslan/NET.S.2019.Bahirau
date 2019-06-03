@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,11 +45,15 @@
     <Compile Include="Entities\AccountEventArgs.cs" />
     <Compile Include="Entities\AccountType.cs" />
     <Compile Include="Entities\Bonus.cs" />
+    <Compile Include="Entities\BonusEventArgs.cs" />
     <Compile Include="Entities\Holder.cs" />
-    <Compile Include="Interfaces\IAccountIdService.cs" />
+    <Compile Include="Entities\Notification.cs" />
     <Compile Include="Interfaces\IAccountService.cs" />
-    <Compile Include="Interfaces\IHolderIdService.cs" />
+    <Compile Include="Interfaces\IAccountTypeService.cs" />
+    <Compile Include="Interfaces\ICRUDService.cs" />
     <Compile Include="Interfaces\IHolderService.cs" />
+    <Compile Include="Interfaces\INotificationService.cs" />
+    <Compile Include="Interfaces\IUptatable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
