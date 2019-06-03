@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL.Interface.Interfaces
 {
@@ -15,6 +12,8 @@ namespace BLL.Interface.Interfaces
         void Update(T item);
 
         void Remove(T item);
+
+        IEnumerable<T> GetBy(Func<T, bool> predicate);
 
         IEnumerable<T> GetAll();
     }
