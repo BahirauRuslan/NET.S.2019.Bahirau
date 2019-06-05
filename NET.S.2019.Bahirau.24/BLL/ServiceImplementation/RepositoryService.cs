@@ -7,7 +7,7 @@ using DAL.Interface.Interfaces;
 
 namespace BLL.ServiceImplementation
 {
-    public class RepositoryService<T, DTOT> : ICRUDService<T>, IUptatable where DTOT : class where T : class
+    public class RepositoryService<T, DTOT> : ICRUDService<T>, IUptatable where DTOT : class, IUniqueEntity where T : class
     {
         public RepositoryService(IRepository<DTOT> repository)
         {
