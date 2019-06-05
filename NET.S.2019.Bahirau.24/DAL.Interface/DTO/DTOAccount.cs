@@ -1,10 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using DAL.Interface.Interfaces;
 
 namespace DAL.Interface.DTO
 {
     [Serializable]
-    public class DTOAccount
+    public class DTOAccount : IUniqueEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
