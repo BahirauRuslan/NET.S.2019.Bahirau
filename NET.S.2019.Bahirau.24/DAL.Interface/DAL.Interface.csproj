@@ -47,6 +47,7 @@
     <Compile Include="DTO\DTOHolder.cs" />
     <Compile Include="DTO\DTONotification.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IUniqueEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
