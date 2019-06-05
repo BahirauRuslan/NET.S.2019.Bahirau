@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Utilities;
+using System.Data.Entity.Migrations;
 using DAL.Interface.Interfaces;
 
 namespace DAL.DB.Repositories
 {
-    public abstract class DBRepository<T> : IRepository<T> where T : class
+    public abstract class DBRepository<T> : IRepository<T> where T : class, IUniqueEntity
     {
         public DBRepository(BankContext bankContext)
         {
@@ -45,13 +47,13 @@ namespace DAL.DB.Repositories
         public void Remove(T item)
         {
             CheckArgument(item);
-            ThisSet.Remove(item);
+            ThisSet.Remove(ThisSet.Find(item.Id));
         }
 
         public void Update(T item)
         {
             CheckArgument(item);
-            BankContext.Entry(item).State = EntityState.Modified;
+            ThisSet.AddOrUpdate(item);
         }
 
         public void Save()
