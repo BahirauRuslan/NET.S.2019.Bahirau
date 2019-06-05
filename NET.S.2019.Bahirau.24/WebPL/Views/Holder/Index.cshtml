@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BLL.Interface.Entities.Holder>
+
+@{
+    ViewBag.Title = "Holders";
+}
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddHolder")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Surname)
+        </th>
+        <th>
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditHolder", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "DeleteHolder", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
