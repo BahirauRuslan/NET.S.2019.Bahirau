@@ -2,7 +2,7 @@
 
 namespace DAL.Interface.Interfaces
 {
-    public interface IRepository<T>
+    public interface IRepository<T> where T : class, IUniqueEntity
     {
         IEnumerable<T> Items { get; }
 
